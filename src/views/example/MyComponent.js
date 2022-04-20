@@ -6,6 +6,7 @@ class MyComponent extends React.Component {
         channel: 'Hoi dan it'
     }
     handleOnchangeName = (event) => {
+        console.log(event.target.value, 'event target:', event.target, 'event object:', event)
         this.setState({
             name: event.target.value
         })
@@ -14,12 +15,13 @@ class MyComponent extends React.Component {
         alert('click me');
     }
     render() {
+        console.log('>>> call render', this.state)
         let name = 'cuong'
         return (
             <div className='abc'>
                 <div className='first'>
                     <input value={this.state.name} type="text" onChange={(event) => this.handleOnchangeName(event)} />
-                    {console.log('My name is:', name)}
+
                     hello my Component Hoi dan it,My name is {this.state.name}
                 </div>
                 <div className='second'>
