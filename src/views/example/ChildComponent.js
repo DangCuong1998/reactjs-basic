@@ -22,11 +22,12 @@ class ChildComponent extends React.Component {
     }
 
     render() {
-        console.log('>>> call render', this.state)
-        let name = 'cuong'
+        console.log('>>> check props:', this.props)
+        let name = this.props.name;
+        let age = this.props.age;
         return (
             <>
-                <div>child Component: {this.props.name}</div>
+                <div>child Component: {name} - {age}</div>
             </>
 
         )
